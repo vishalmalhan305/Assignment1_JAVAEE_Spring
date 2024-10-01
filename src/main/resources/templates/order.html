@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<title>Order Form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container form-container">
+		<h2>Order Form</h2>
+		<form th:action="@{/order}" method="post" th:object="${order}"
+			class="form-horizontal">
+
+			<!-- Customer Details -->
+			<h4>Customer Details</h4>
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="firstName">First Name:</label> <input type="text"
+						id="firstName" th:field="*{firstName}" class="form-control"
+						required />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="middleName">Middle Name:</label> <input type="text"
+						id="middleName" th:field="*{middleName}" class="form-control" />
+				</div>
+				<div class="form-group col-md-4">
+					<label for="lastName">Last Name:</label> <input type="text"
+						id="lastName" th:field="*{lastName}" class="form-control" required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="email">Email:</label> <input type="email" id="email"
+					th:field="*{email}" class="form-control" required />
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-4">
+					<label for="areaCode">Area Code:</label> <input type="text"
+						id="areaCode" th:field="*{areaCode}" class="form-control" required />
+				</div>
+				<div class="form-group col-md-8">
+					<label for="phoneNumber">Phone Number:</label> <input type="text"
+						id="phoneNumber" th:field="*{phoneNumber}" class="form-control"
+						required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="streetAddress">Street Address:</label> <input
+					type="text" id="streetAddress" th:field="*{streetAddress}"
+					class="form-control" required />
+			</div>
+
+			<div class="form-group">
+				<label for="streetAddressLine2">Street Address Line 2:</label> <input
+					type="text" id="streetAddressLine2"
+					th:field="*{streetAddressLine2}" class="form-control" />
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="city">City:</label> <input type="text" id="city"
+						th:field="*{city}" class="form-control" required />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="stateOrProvince">State/Province:</label> <input
+						type="text" id="stateOrProvince" th:field="*{stateOrProvince}"
+						class="form-control" required />
+				</div>
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="postalCode">Postal Code:</label> <input type="text"
+						id="postalCode" th:field="*{postalCode}" class="form-control"
+						required />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="country">Country:</label> <input type="text"
+						id="country" th:field="*{country}" class="form-control" required />
+				</div>
+			</div>
+
+			<!-- Product Details -->
+			<h4>Product Details</h4>
+			<div class="form-group">
+				<label for="productNumber">Product Number:</label> <input
+					type="number" id="productNumber" th:field="*{productNumber}"
+					class="form-control" required />
+			</div>
+
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="productBrand">Product Brand:</label> <input type="text"
+						id="productBrand" th:field="*{productBrand}" class="form-control"
+						required />
+				</div>
+				<div class="form-group col-md-6">
+					<label for="productModel">Product Model:</label> <input type="text"
+						id="productModel" th:field="*{productModel}" class="form-control"
+						required />
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="productQuantity">Product Quantity:</label> <input
+					type="number" id="productQuantity" th:field="*{productQuantity}"
+					class="form-control" required />
+			</div>
+			<div class="form-group">
+        <label for="productPrice">Product Price:</label>
+        <input type="number" id="productPrice" th:field="*{productPrice}" class="form-control" required />
+			</div>
+			<!-- Buttons -->
+			<div class="btn-container">
+				<button type="submit" class="btn btn-primary">Submit Order</button>
+				<button type="reset" class="btn btn-primary">Reset</button>
+			</div>
+		</form>
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

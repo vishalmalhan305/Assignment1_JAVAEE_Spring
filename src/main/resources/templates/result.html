@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Order Submission Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Order Submission Result</h1>
+        
+        <!-- Customer Details -->
+        <div class="result-group">
+            <h4>Customer Details</h4>
+            <p th:text="'First Name: ' + ${order.firstName}" />
+            <p th:text="'Middle Name: ' + ${order.middleName}" />
+            <p th:text="'Last Name: ' + ${order.lastName}" />
+            <p th:text="'Email: ' + ${order.email}" />
+            <p th:text="'Area Code: ' + ${order.areaCode}" />
+            <p th:text="'Phone Number: ' + ${order.phoneNumber}" />
+            <p th:text="'Street Address: ' + ${order.streetAddress}" />
+            <p th:text="'Street Address Line 2: ' + ${order.streetAddressLine2}" />
+            <p th:text="'City: ' + ${order.city}" />
+            <p th:text="'State/Province: ' + ${order.stateOrProvince}" />
+            <p th:text="'Postal Code: ' + ${order.postalCode}" />
+            <p th:text="'Country: ' + ${order.country}" />
+        </div>
+        
+        <!-- Product Details -->
+        <div class="result-group">
+            <h4>Product Details</h4>
+           <p th:text="'Product Number: ' + ${order.productNumber}" />
+    <p th:text="'Product Brand: ' + ${order.productBrand}" />
+    <p th:text="'Product Model: ' + ${order.productModel}" />
+    <p th:text="'Product Quantity: ' + ${order.productQuantity}" />
+    <p th:text="'Product Price: $' + ${order.productPrice}" />
+    <p th:text="'Total Cost: $' + ${order.totalCost}" />
+        </div>
+        
+        <div class="btn-container">
+            <a href="/order">Submit Another Order</a>
+        </div>
+    </div>
+</body>
+</html>
